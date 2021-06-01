@@ -1,0 +1,21 @@
+# The network interfaces of OrangePi
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+	address 192.168.1.8
+	gateway 192.168.1.1
+	netmask 255.255.255.0
+	
+
+# auto wlan0
+# iface wlan0 inet dhcp
+#     wireless-essid IHEP
+#     up route add default gw 10.10.0.1 dev wlan0
